@@ -26,3 +26,35 @@ document.querySelectorAll(".choice-grid button").forEach(btn=>btn.addEventListen
   if(current<steps.length-1){steps[current+1].classList.remove("hidden");if(current===1){document.getElementById("profileTitle").textContent=answers[0]+" • "+answers[1];document.getElementById("profileText").textContent="Your demo profile is ready. Explore the collection and shape a simple wellness routine at your own pace."}}
 }));
 document.getElementById("finishQuiz")?.addEventListener("click",()=>{closeModal();document.getElementById("collection").scrollIntoView({behavior:"smooth"});showToast("Demo profile complete — explore the collection.")});
+
+const cartState={};
+const cartDrawer=document.getElementById("cartDrawer"), cartItems=document.getElementById("cartItems"), cartCount=document.getElementById("cartCount"), cartSubtotal=document.getElementById("cartSubtotal");
+function money(n){return "₹"+n.toLocaleString("en-IN")}
+function renderCart(){
+  const items=Object.values(cartState);
+  const count=items.reduce((s,x)=>s+x.qty,0), subtotal=items.reduce((s,x)=>s+x.price*x.qty,0);
+  cartCount.textContent=count; cartSubtotal.textContent=money(subtotal);
+  if(!items.length){cartItems.innerHTML='<div class="empty-cart"><span>✦</span><b>Your cart is waiting.</b><p>Add a ritual from the collection to get started.</p></div>';return}
+  cartItems.innerHTML=items.map((x)=>'<div class="cart-item"><div class="cart-thumb">'+x.name.split(" ")[0]+'</div><div><h4>'+x.name+'</h4><small>'+money(x.price)+' each</small><div class="qty"><button data-minus="'+x.name+'">−</button><span>'+x.qty+'</span><button data-plus="'+x.name+'">+</button></div></div><strong class="cart-item-total">'+money(x.price*x.qty)+'</strong></div>').join("");
+  cartItems.querySelectorAll("[data-minus]").forEach(b=>b.onclick=()=>changeQty(b.dataset.minus,-1));
+  cartItems.querySelectorAll("[data-plus]").forEach(b=>b.onclick=()=>changeQty(b.dataset.plus,1));
+}
+function changeQty(name,delta){if(!cartState[name])return;cartState[name].qty+=delta;if(cartState[name].qty<=0)delete cartState[name];renderCart()}
+function addToCart(name,price){if(!cartState[name])cartState[name]={name,price,qty:0};cartState[name].qty++;renderCart();openCart();showToast(name+" added to cart")}
+function openCart(){cartDrawer.classList.add("open");cartDrawer.setAttribute("aria-hidden","false");document.body.style.overflow="hidden"}
+function closeCart(){cartDrawer.classList.remove("open");cartDrawer.setAttribute("aria-hidden","true");if(!document.getElementById("checkoutModal").classList.contains("open"))document.body.style.overflow=""}
+document.querySelectorAll("[data-add]").forEach(b=>b.addEventListener("click",()=>addToCart(b.dataset.add,Number(b.dataset.price))));
+document.getElementById("openCart")?.addEventListener("click",openCart);document.getElementById("closeCart")?.addEventListener("click",closeCart);document.getElementById("cartBackdrop")?.addEventListener("click",closeCart);
+
+const checkoutModal=document.getElementById("checkoutModal");
+function openCheckout(){const total=Object.values(cartState).reduce((s,x)=>s+x.price*x.qty,0);if(!total){showToast("Your cart is empty");return}document.getElementById("checkoutTotal").textContent=money(total);checkoutModal.classList.add("open");checkoutModal.setAttribute("aria-hidden","false")}
+function closeCheckout(){checkoutModal.classList.remove("open");checkoutModal.setAttribute("aria-hidden","true");if(!cartDrawer.classList.contains("open"))document.body.style.overflow=""}
+document.getElementById("checkoutBtn")?.addEventListener("click",openCheckout);document.getElementById("closeCheckout")?.addEventListener("click",closeCheckout);document.getElementById("checkoutBackdrop")?.addEventListener("click",closeCheckout);
+document.getElementById("placeOrder")?.addEventListener("click",()=>{const name=document.getElementById("checkoutName").value.trim();if(!name){showToast("Please enter your name");return}closeCheckout();closeCart();Object.keys(cartState).forEach(k=>delete cartState[k]);renderCart();showToast("Demo order placed — thank you, "+name+" ✦")});
+
+document.getElementById("sortProducts")?.addEventListener("change",(e)=>{
+ const grid=document.getElementById("productGrid"), cards=[...grid.children];
+ cards.sort((a,b)=>e.target.value==="low"?Number(a.dataset.price)-Number(b.dataset.price):e.target.value==="high"?Number(b.dataset.price)-Number(a.dataset.price):0);
+ cards.forEach(x=>grid.appendChild(x));
+});
+renderCart();
