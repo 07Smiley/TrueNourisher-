@@ -27,7 +27,7 @@
       <a href="#verify">Verify</a>
       <a href="#journey">Journey</a>
     </nav>
-    <a class="header-cta" href="#personalize">Find my ritual <span>↗</span></a>
+    <div class="header-actions"><a class="header-cta" href="#personalize">Find my ritual <span>↗</span></a><button class="cart-button" id="openCart" aria-label="Open cart">Cart <b id="cartCount">0</b></button></div>
   </header>
 
   <main id="home">
@@ -84,16 +84,56 @@
     </section>
 
     <section class="section collection" id="collection">
-      <div class="section-head">
-        <div><div class="section-kicker">02 / The collection</div><h2>Rituals for everyday<br><em>wellness.</em></h2></div>
-        <p>Conceptual collections for the trueNourisher ecosystem. Product details and formulations can be connected to the catalog as the store evolves.</p>
-      </div>
-      <div class="product-grid">
-        <article class="product-card sage-card"><div class="product-visual mini-bottle"><span>TN</span></div><div class="product-meta"><span>Herbal collection</span><h3>Daily Wellness Blend</h3><p>Natural wellness, made part of the everyday ritual.</p><button class="text-button" data-toast="Collection coming soon">View collection →</button></div></article>
-        <article class="product-card cream-card"><div class="product-visual bowl"><div></div><span>01</span></div><div class="product-meta"><span>Superfood collection</span><h3>Natural Nourishment</h3><p>A considered collection for a simpler, more mindful routine.</p><button class="text-button" data-toast="Collection coming soon">View collection →</button></div></article>
-        <article class="product-card dark-card"><div class="product-visual jars"><div class="jar"></div><div class="jar jar-2"></div></div><div class="product-meta"><span>Curated ritual</span><h3>Wellness Combo</h3><p>Bring discovery, purchase and tracking together in one journey.</p><button class="text-button" data-toast="Collection coming soon">View collection →</button></div></article>
-      </div>
-    </section>
+  <div class="section-head">
+    <div><div class="section-kicker">02 / Shop the collection</div><h2>Premium rituals for<br><em>everyday wellness.</em></h2></div>
+    <p>Explore the conceptual trueNourisher catalogue. Add products to your cart, adjust quantities and preview checkout — all as a front-end store prototype.</p>
+  </div>
+
+  <div class="shop-banner">
+    <div class="showcase-scene" aria-label="trueNourisher product showcase">
+      <div class="showcase-jar jar-ash"><span>ASHWAGANDHA</span></div>
+      <div class="showcase-jar jar-turmeric"><span>TURMERIC<br>CURCUMIN</span></div>
+      <div class="showcase-jar jar-trip"><span>TRIPHALA</span></div>
+      <div class="showcase-jar jar-brahmi"><span>BRAHMI</span></div>
+      <div class="showcase-pouch"><span>MORINGA<br>SUPERFOOD</span></div>
+    </div>
+    <div class="shop-banner-copy">
+      <span class="badge">TRUE NOURISHER / NEW</span>
+      <h3>Ancient wisdom.<br><em>Modern ritual.</em></h3>
+      <p>Clean, earthy product presentation inspired by the trueNourisher collection deck, with transparent pricing and a frictionless D2C shopping flow.</p>
+      <div class="banner-points"><span>✓ Batch-ready products</span><span>✓ Secure checkout UI</span><span>✓ Easy reorder</span></div>
+    </div>
+  </div>
+
+  <div class="product-toolbar">
+    <div><b>5 products</b><span>Concept catalogue</span></div>
+    <select id="sortProducts" aria-label="Sort products"><option value="featured">Sort: Featured</option><option value="low">Price: Low to high</option><option value="high">Price: High to low</option></select>
+  </div>
+
+  <div class="product-grid shop-grid" id="productGrid">
+    <article class="product-card shop-card" data-product="Ashwagandha" data-price="499" data-category="Stress support">
+      <div class="product-photo photo-ash"><span class="photo-tag">BESTSELLER</span><div class="photo-jar"><i>tn</i><b>ASHWAGANDHA</b><small>Stress Support</small></div></div>
+      <div class="product-meta"><span>Herbal collection</span><h3>Ashwagandha</h3><p>Daily herbal ritual for a calm, balanced routine.</p><div class="price-row"><strong>₹499</strong><del>₹599</del><small>60 capsules</small></div><button class="add-button" data-add="Ashwagandha" data-price="499">Add to cart <span>+</span></button></div>
+    </article>
+    <article class="product-card shop-card" data-product="Turmeric Curcumin" data-price="549" data-category="Immunity">
+      <div class="product-photo photo-turmeric"><span class="photo-tag">POPULAR</span><div class="photo-jar"><i>tn</i><b>TURMERIC<br>CURCUMIN</b><small>Immunity Support</small></div></div>
+      <div class="product-meta"><span>Herbal collection</span><h3>Turmeric Curcumin</h3><p>Classic turmeric ritual presented for modern everyday use.</p><div class="price-row"><strong>₹549</strong><del>₹649</del><small>60 capsules</small></div><button class="add-button" data-add="Turmeric Curcumin" data-price="549">Add to cart <span>+</span></button></div>
+    </article>
+    <article class="product-card shop-card" data-product="Triphala" data-price="449" data-category="Digestive wellness">
+      <div class="product-photo photo-trip"><span class="photo-tag">DAILY RITUAL</span><div class="photo-jar"><i>tn</i><b>TRIPHALA</b><small>Digestive Health</small></div></div>
+      <div class="product-meta"><span>Herbal collection</span><h3>Triphala</h3><p>A traditional botanical blend for a mindful daily ritual.</p><div class="price-row"><strong>₹449</strong><del>₹549</del><small>60 capsules</small></div><button class="add-button" data-add="Triphala" data-price="449">Add to cart <span>+</span></button></div>
+    </article>
+    <article class="product-card shop-card" data-product="Brahmi" data-price="529" data-category="Focus">
+      <div class="product-photo photo-brahmi"><span class="photo-tag">FOCUS</span><div class="photo-jar"><i>tn</i><b>BRAHMI</b><small>Focus & Clarity</small></div></div>
+      <div class="product-meta"><span>Herbal collection</span><h3>Brahmi</h3><p>A clean, simple addition to a focused wellness routine.</p><div class="price-row"><strong>₹529</strong><del>₹629</del><small>60 capsules</small></div><button class="add-button" data-add="Brahmi" data-price="529">Add to cart <span>+</span></button></div>
+    </article>
+    <article class="product-card shop-card" data-product="Moringa Superfood" data-price="399" data-category="Superfood">
+      <div class="product-photo photo-moringa"><span class="photo-tag">SUPERFOOD</span><div class="photo-pouch"><i>tn</i><b>MORINGA</b><small>SUPERFOOD POWDER</small></div></div>
+      <div class="product-meta"><span>Superfood collection</span><h3>Moringa Superfood</h3><p>100% pure conceptual superfood pouch for daily nourishment.</p><div class="price-row"><strong>₹399</strong><del>₹449</del><small>100 g</small></div><button class="add-button" data-add="Moringa Superfood" data-price="399">Add to cart <span>+</span></button></div>
+    </article>
+  </div>
+  <p class="store-note">Prototype storefront — prices, stock, payment and product claims are placeholders until connected to the real catalogue.</p>
+</section>
 
     <section class="personalize" id="personalize">
       <div class="personalize-art">
@@ -194,7 +234,24 @@
       <div class="quiz-step hidden" data-step="3"><p class="quiz-question">Your demo profile is ready.</p><div class="result-box"><span>✦</span><div><b id="profileTitle">Your wellness starting point</b><p id="profileText">Explore the collection and build a routine at your own pace.</p></div></div><button class="button button-dark" id="finishQuiz">Explore the collection <span>→</span></button></div>
     </div>
   </div>
-  <div class="toast" id="toast" role="status"></div>
+  <div class="cart-drawer" id="cartDrawer" aria-hidden="true">
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-panel">
+    <div class="cart-head"><div><span class="section-kicker">YOUR BAG</span><h3>Wellness cart</h3></div><button id="closeCart" aria-label="Close cart">×</button></div>
+    <div class="cart-items" id="cartItems"><div class="empty-cart"><span>✦</span><b>Your cart is waiting.</b><p>Add a ritual from the collection to get started.</p></div></div>
+    <div class="cart-summary"><div><span>Subtotal</span><strong id="cartSubtotal">₹0</strong></div><small>Free shipping on orders above ₹999</small><button class="checkout-button" id="checkoutBtn">Proceed to checkout <span>→</span></button></div>
+  </aside>
+</div>
+<div class="checkout-modal" id="checkoutModal" aria-hidden="true">
+  <div class="checkout-backdrop" id="checkoutBackdrop"></div>
+  <div class="checkout-card"><button class="modal-close" id="closeCheckout">×</button><span class="section-kicker">SECURE CHECKOUT / DEMO</span><h2>Complete your <em>order.</em></h2>
+    <div class="checkout-grid"><label>Full name<input id="checkoutName" placeholder="Your name"></label><label>Phone<input id="checkoutPhone" placeholder="+91"></label><label class="wide">Delivery address<textarea id="checkoutAddress" placeholder="House / street / city / PIN"></textarea></label></div>
+    <div class="checkout-total"><span>Order total</span><strong id="checkoutTotal">₹0</strong></div>
+    <button class="button button-dark" id="placeOrder">Place demo order <span>→</span></button>
+    <small class="checkout-note">Demo only. No real payment is processed.</small>
+  </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
   <script src="script.js"></script>
 </body>
 </html>
