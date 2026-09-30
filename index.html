@@ -1,257 +1,32 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#173b2b">
-  <meta name="description" content="trueNourisher — authentic Ayurvedic wellness with transparent verification and intelligent personalization.">
-  <title>trueNourisher — Nourish Naturally. Live Truly.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="announcement">Authentic Ayurveda • Intelligent personalization • Transparent wellness</div>
-
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="trueNourisher home">
-      <span class="brand-mark">tn</span>
-      <span>true<span>Nourisher</span></span>
-    </a>
-    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-    <nav class="nav" id="nav">
-      <a href="#why">Why us</a>
-      <a href="#collection">Collection</a>
-      <a href="#personalize">Personalize</a>
-      <a href="#verify">Verify</a>
-      <a href="#journey">Journey</a>
-    </nav>
-    <div class="header-actions"><a class="header-cta" href="#personalize">Find my ritual <span>↗</span></a><button class="cart-button" id="openCart" aria-label="Open cart">Cart <b id="cartCount">0</b></button></div>
-  </header>
-
-  <main id="home">
-    <section class="hero">
-      <div class="hero-copy">
-        <div class="eyebrow"><span></span> Ayurveda, made clearer</div>
-        <h1>Nourish naturally.<br><em>Live truly.</em></h1>
-        <p class="hero-lede">A digital wellness ecosystem bringing authentic Ayurvedic formulations, transparent product verification and personalized guidance into one calm, connected experience.</p>
-        <div class="hero-actions">
-          <a class="button button-dark" href="#collection">Explore wellness <span>→</span></a>
-          <a class="button button-ghost" href="#personalize">Start personalization</a>
-        </div>
-        <div class="trust-row">
-          <div><strong>01</strong><span>Authentic<br>formulations</span></div>
-          <div><strong>02</strong><span>Batch-level<br>verification</span></div>
-          <div><strong>03</strong><span>Personalized<br>wellness</span></div>
-        </div>
-      </div>
-      <div class="hero-art">
-        <div class="sun-glow"></div>
-        <div class="leaf leaf-a"></div><div class="leaf leaf-b"></div><div class="leaf leaf-c"></div>
-        <div class="product-bottle">
-          <div class="bottle-cap"></div>
-          <div class="bottle-body">
-            <div class="bottle-label">
-              <small>trueNourisher</small>
-              <strong>AYURVEDA</strong>
-              <span>Daily Wellness<br>Herbal Blend</span>
-              <i>TN • 01</i>
-            </div>
-          </div>
-        </div>
-        <div class="floating-card verify-card"><span class="check">✓</span><div><b>Batch verified</b><small>Transparent by design</small></div></div>
-        <div class="floating-card ai-card"><span class="spark">✦</span><div><b>Personalized</b><small>Built around your journey</small></div></div>
-      </div>
-    </section>
-
-    <section class="marquee" aria-label="trueNourisher values">
-      <span>AUTHENTIC AYURVEDA</span><i>✦</i><span>AI PERSONALIZATION</span><i>✦</i><span>TRANSPARENT WELLNESS</span><i>✦</i><span>HOLISTIC JOURNEY</span><i>✦</i>
-    </section>
-
-    <section class="section intro" id="why">
-      <div class="section-kicker">01 / The trueNourisher difference</div>
-      <div class="intro-grid">
-        <div><h2>Wellness should feel <em>simple.</em></h2></div>
-        <div><p>Instead of making people navigate noise, uncertainty and generic recommendations, trueNourisher connects the physical product with a digital layer designed around discovery, verification, personalization and ongoing wellness tracking.</p></div>
-      </div>
-      <div class="pillar-grid">
-        <article class="pillar"><div class="pillar-icon">◌</div><span>01</span><h3>Authentic Ayurveda</h3><p>Focused on natural Ayurvedic formulations and a clearer path from ingredient to product.</p></article>
-        <article class="pillar"><div class="pillar-icon">✦</div><span>02</span><h3>AI Personalization</h3><p>A digital layer designed to turn user goals and preferences into more relevant wellness guidance.</p></article>
-        <article class="pillar"><div class="pillar-icon">⌁</div><span>03</span><h3>QR Verification</h3><p>Batch-level verification gives every purchase a transparent digital touchpoint.</p></article>
-        <article class="pillar"><div class="pillar-icon">↗</div><span>04</span><h3>Wellness Tracking</h3><p>A post-purchase journey that keeps the relationship going beyond the delivery box.</p></article>
-      </div>
-    </section>
-
-    <section class="section collection" id="collection">
-  <div class="section-head">
-    <div><div class="section-kicker">02 / Shop the collection</div><h2>Premium rituals for<br><em>everyday wellness.</em></h2></div>
-    <p>Explore the conceptual trueNourisher catalogue. Add products to your cart, adjust quantities and preview checkout — all as a front-end store prototype.</p>
-  </div>
-
-  <div class="shop-banner">
-    <div class="showcase-scene" aria-label="trueNourisher product showcase">
-      <div class="showcase-jar jar-ash"><span>ASHWAGANDHA</span></div>
-      <div class="showcase-jar jar-turmeric"><span>TURMERIC<br>CURCUMIN</span></div>
-      <div class="showcase-jar jar-trip"><span>TRIPHALA</span></div>
-      <div class="showcase-jar jar-brahmi"><span>BRAHMI</span></div>
-      <div class="showcase-pouch"><span>MORINGA<br>SUPERFOOD</span></div>
-    </div>
-    <div class="shop-banner-copy">
-      <span class="badge">TRUE NOURISHER / NEW</span>
-      <h3>Ancient wisdom.<br><em>Modern ritual.</em></h3>
-      <p>Clean, earthy product presentation inspired by the trueNourisher collection deck, with transparent pricing and a frictionless D2C shopping flow.</p>
-      <div class="banner-points"><span>✓ Batch-ready products</span><span>✓ Secure checkout UI</span><span>✓ Easy reorder</span></div>
-    </div>
-  </div>
-
-  <div class="product-toolbar">
-    <div><b>5 products</b><span>Concept catalogue</span></div>
-    <select id="sortProducts" aria-label="Sort products"><option value="featured">Sort: Featured</option><option value="low">Price: Low to high</option><option value="high">Price: High to low</option></select>
-  </div>
-
-  <div class="product-grid shop-grid" id="productGrid">
-    <article class="product-card shop-card" data-product="Ashwagandha" data-price="499" data-category="Stress support">
-      <div class="product-photo photo-ash"><span class="photo-tag">BESTSELLER</span><div class="photo-jar"><i>tn</i><b>ASHWAGANDHA</b><small>Stress Support</small></div></div>
-      <div class="product-meta"><span>Herbal collection</span><h3>Ashwagandha</h3><p>Daily herbal ritual for a calm, balanced routine.</p><div class="price-row"><strong>₹499</strong><del>₹599</del><small>60 capsules</small></div><button class="add-button" data-add="Ashwagandha" data-price="499">Add to cart <span>+</span></button></div>
-    </article>
-    <article class="product-card shop-card" data-product="Turmeric Curcumin" data-price="549" data-category="Immunity">
-      <div class="product-photo photo-turmeric"><span class="photo-tag">POPULAR</span><div class="photo-jar"><i>tn</i><b>TURMERIC<br>CURCUMIN</b><small>Immunity Support</small></div></div>
-      <div class="product-meta"><span>Herbal collection</span><h3>Turmeric Curcumin</h3><p>Classic turmeric ritual presented for modern everyday use.</p><div class="price-row"><strong>₹549</strong><del>₹649</del><small>60 capsules</small></div><button class="add-button" data-add="Turmeric Curcumin" data-price="549">Add to cart <span>+</span></button></div>
-    </article>
-    <article class="product-card shop-card" data-product="Triphala" data-price="449" data-category="Digestive wellness">
-      <div class="product-photo photo-trip"><span class="photo-tag">DAILY RITUAL</span><div class="photo-jar"><i>tn</i><b>TRIPHALA</b><small>Digestive Health</small></div></div>
-      <div class="product-meta"><span>Herbal collection</span><h3>Triphala</h3><p>A traditional botanical blend for a mindful daily ritual.</p><div class="price-row"><strong>₹449</strong><del>₹549</del><small>60 capsules</small></div><button class="add-button" data-add="Triphala" data-price="449">Add to cart <span>+</span></button></div>
-    </article>
-    <article class="product-card shop-card" data-product="Brahmi" data-price="529" data-category="Focus">
-      <div class="product-photo photo-brahmi"><span class="photo-tag">FOCUS</span><div class="photo-jar"><i>tn</i><b>BRAHMI</b><small>Focus & Clarity</small></div></div>
-      <div class="product-meta"><span>Herbal collection</span><h3>Brahmi</h3><p>A clean, simple addition to a focused wellness routine.</p><div class="price-row"><strong>₹529</strong><del>₹629</del><small>60 capsules</small></div><button class="add-button" data-add="Brahmi" data-price="529">Add to cart <span>+</span></button></div>
-    </article>
-    <article class="product-card shop-card" data-product="Moringa Superfood" data-price="399" data-category="Superfood">
-      <div class="product-photo photo-moringa"><span class="photo-tag">SUPERFOOD</span><div class="photo-pouch"><i>tn</i><b>MORINGA</b><small>SUPERFOOD POWDER</small></div></div>
-      <div class="product-meta"><span>Superfood collection</span><h3>Moringa Superfood</h3><p>100% pure conceptual superfood pouch for daily nourishment.</p><div class="price-row"><strong>₹399</strong><del>₹449</del><small>100 g</small></div><button class="add-button" data-add="Moringa Superfood" data-price="399">Add to cart <span>+</span></button></div>
-    </article>
-  </div>
-  <p class="store-note">Prototype storefront — prices, stock, payment and product claims are placeholders until connected to the real catalogue.</p>
-</section>
-
-    <section class="personalize" id="personalize">
-      <div class="personalize-art">
-        <div class="orb"></div>
-        <div class="assessment-card">
-          <span class="tiny-label">YOUR WELLNESS PROFILE</span>
-          <div class="progress"><i></i></div>
-          <p>What are you looking for?</p>
-          <button>Everyday balance <b>✓</b></button>
-          <button>Better routine <b>›</b></button>
-          <button>Learn about Ayurveda <b>›</b></button>
-        </div>
-      </div>
-      <div class="personalize-copy">
-        <div class="section-kicker">03 / Personalization</div>
-        <h2>Your ritual.<br><em>Your journey.</em></h2>
-        <p>Start with what matters to you. The concept behind trueNourisher's personalization layer is simple: understand the person, surface relevant options and keep the experience useful after purchase.</p>
-        <div class="steps">
-          <div><b>01</b><span><strong>Tell us your goal</strong>Choose what you want from your wellness routine.</span></div>
-          <div><b>02</b><span><strong>Build your profile</strong>Add lifestyle, preferences and assessment details.</span></div>
-          <div><b>03</b><span><strong>Explore your ritual</strong>Discover relevant products and digital guidance.</span></div>
-        </div>
-        <button class="button button-light" id="openQuiz">Try the demo assessment <span>→</span></button>
-      </div>
-    </section>
-
-    <section class="section verify-section" id="verify">
-      <div class="verify-copy">
-        <div class="section-kicker">04 / Transparency</div>
-        <h2>Know what<br>you <em>bought.</em></h2>
-        <p>Every product can become a digital touchpoint. Enter a demo batch ID below to see how a future QR verification experience could work.</p>
-        <div class="verify-form">
-          <label for="batch">Batch ID</label>
-          <div class="input-row"><input id="batch" placeholder="Try TN-2026-001" autocomplete="off"><button id="verifyBtn">Verify</button></div>
-          <small>Demo interface — not connected to a live product database.</small>
-        </div>
-        <div class="verify-result" id="verifyResult" aria-live="polite"></div>
-      </div>
-      <div class="verification-visual">
-        <div class="qr-frame">
-          <div class="qr-grid" aria-hidden="true"></div>
-          <div class="qr-center">tn</div>
-        </div>
-        <span class="scan-line"></span>
-        <div class="scan-caption"><span>●</span> SCAN • VERIFY • KNOW</div>
-      </div>
-    </section>
-
-    <section class="journey" id="journey">
-      <div class="section center"><div class="section-kicker">05 / The ecosystem</div><h2>From first question<br>to <em>wellness journey.</em></h2><p class="journey-lede">The proposed customer journey connects the physical and digital sides of trueNourisher.</p></div>
-      <div class="journey-line">
-        <article><span>01</span><div class="journey-icon">◎</div><h3>Assess</h3><p>Understand goals, preferences and profile.</p></article>
-        <article><span>02</span><div class="journey-icon">✦</div><h3>Recommend</h3><p>Surface more relevant wellness options.</p></article>
-        <article><span>03</span><div class="journey-icon">⌁</div><h3>Verify</h3><p>Connect purchase to batch-level transparency.</p></article>
-        <article><span>04</span><div class="journey-icon">□</div><h3>Deliver</h3><p>Complete the D2C purchase and delivery flow.</p></article>
-        <article><span>05</span><div class="journey-icon">↗</div><h3>Track</h3><p>Continue the relationship after purchase.</p></article>
-      </div>
-    </section>
-
-    <section class="section ecosystem">
-      <div class="section-kicker">06 / Built to scale</div>
-      <div class="eco-grid">
-        <div><h2>One ecosystem.<br><em>Many touchpoints.</em></h2><p>The concept can grow from a focused D2C MVP into a broader wellness platform with subscriptions, consultations, marketplace and B2B capabilities.</p></div>
-        <div class="architecture">
-          <div><span>01</span><b>Store</b><small>Products • Payments • Orders</small></div>
-          <div><span>02</span><b>Trust layer</b><small>Product DB • QR verification</small></div>
-          <div><span>03</span><b>Intelligence</b><small>Profiles • AI recommendations</small></div>
-          <div><span>04</span><b>Wellness</b><small>Tracking • Consultations</small></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta-section">
-      <div class="cta-leaf leaf-a"></div><div class="cta-leaf leaf-b"></div>
-      <div class="section-kicker">trueNourisher</div>
-      <h2>Build a healthier relationship<br>with <em>wellness.</em></h2>
-      <p>Authentic products. Clear information. A digital journey designed around you.</p>
-      <a class="button button-light" href="#personalize">Begin your journey <span>→</span></a>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-main">
-      <div><a class="brand footer-brand" href="#home"><span class="brand-mark">tn</span><span>true<span>Nourisher</span></span></a><p>Building natural wellness.<br>Delivering real impact.</p></div>
-      <div class="footer-links"><div><b>Explore</b><a href="#why">Why us</a><a href="#collection">Collection</a><a href="#personalize">Personalize</a></div><div><b>Experience</b><a href="#verify">Verify a batch</a><a href="#journey">Wellness journey</a><a href="#home">Back to top ↑</a></div></div>
-    </div>
-    <div class="footer-bottom"><span>© <span id="year"></span> trueNourisher</span><span>Wellness information is for general education and is not medical advice.</span></div>
-  </footer>
-
-  <div class="modal" id="quizModal" aria-hidden="true">
-    <div class="modal-backdrop"></div>
-    <div class="modal-card">
-      <button class="modal-close" id="closeQuiz" aria-label="Close">×</button>
-      <div class="section-kicker">DEMO ASSESSMENT</div>
-      <h2>Let's shape your <em>starting point.</em></h2>
-      <div class="quiz-step" data-step="1"><p class="quiz-question">What matters most right now?</p><div class="choice-grid"><button data-choice="Balance">Everyday balance</button><button data-choice="Routine">A better routine</button><button data-choice="Learning">Learn about Ayurveda</button></div></div>
-      <div class="quiz-step hidden" data-step="2"><p class="quiz-question">How do you like to begin?</p><div class="choice-grid"><button data-choice="Simple">Keep it simple</button><button data-choice="Explore">I like to explore</button><button data-choice="Guided">I prefer guidance</button></div></div>
-      <div class="quiz-step hidden" data-step="3"><p class="quiz-question">Your demo profile is ready.</p><div class="result-box"><span>✦</span><div><b id="profileTitle">Your wellness starting point</b><p id="profileText">Explore the collection and build a routine at your own pace.</p></div></div><button class="button button-dark" id="finishQuiz">Explore the collection <span>→</span></button></div>
-    </div>
-  </div>
-  <div class="cart-drawer" id="cartDrawer" aria-hidden="true">
-  <div class="cart-backdrop" id="cartBackdrop"></div>
-  <aside class="cart-panel">
-    <div class="cart-head"><div><span class="section-kicker">YOUR BAG</span><h3>Wellness cart</h3></div><button id="closeCart" aria-label="Close cart">×</button></div>
-    <div class="cart-items" id="cartItems"><div class="empty-cart"><span>✦</span><b>Your cart is waiting.</b><p>Add a ritual from the collection to get started.</p></div></div>
-    <div class="cart-summary"><div><span>Subtotal</span><strong id="cartSubtotal">₹0</strong></div><small>Free shipping on orders above ₹999</small><button class="checkout-button" id="checkoutBtn">Proceed to checkout <span>→</span></button></div>
-  </aside>
-</div>
-<div class="checkout-modal" id="checkoutModal" aria-hidden="true">
-  <div class="checkout-backdrop" id="checkoutBackdrop"></div>
-  <div class="checkout-card"><button class="modal-close" id="closeCheckout">×</button><span class="section-kicker">SECURE CHECKOUT / DEMO</span><h2>Complete your <em>order.</em></h2>
-    <div class="checkout-grid"><label>Full name<input id="checkoutName" placeholder="Your name"></label><label>Phone<input id="checkoutPhone" placeholder="+91"></label><label class="wide">Delivery address<textarea id="checkoutAddress" placeholder="House / street / city / PIN"></textarea></label></div>
-    <div class="checkout-total"><span>Order total</span><strong id="checkoutTotal">₹0</strong></div>
-    <button class="button button-dark" id="placeOrder">Place demo order <span>→</span></button>
-    <small class="checkout-note">Demo only. No real payment is processed.</small>
-  </div>
-</div>
-<div class="toast" id="toast" role="status"></div>
-  <script src="script.js"></script>
-</body>
-</html>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f5f0e7"><meta name="description" content="trueNourisher — premium Ayurvedic wellness, thoughtfully made.">
+<title>trueNourisher — Nourish Naturally. Live Truly.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css">
+</head><body>
+<div class="topbar">FREE SHIPPING ON ORDERS ABOVE ₹999 <span>•</span> AUTHENTIC AYURVEDA, REIMAGINED</div>
+<header class="header"><a class="logo" href="#home"><span class="logo-mark">tn</span><span>true<span>Nourisher</span></span></a><button class="menu" id="menu">☰</button><nav id="nav"><a href="#shop">Shop</a><a href="#story">Our story</a><a href="#ritual">Wellness</a><a href="#verify">Verify</a></nav><div class="head-actions"><a class="search" href="#shop">⌕</a><button class="bag" id="openCart">Bag <b id="cartCount">0</b></button></div></header>
+<main id="home">
+<section class="hero"><div class="hero-copy"><p class="overline">NATURAL WELLNESS / TRUE NOURISHER</p><h1>Ancient wisdom,<br><em>beautifully bottled.</em></h1><p class="hero-text">Premium Ayurvedic wellness for modern rituals — thoughtfully presented, transparently verified and made to fit beautifully into everyday life.</p><div class="hero-buttons"><a class="btn dark" href="#shop">Shop the collection <span>↗</span></a><a class="link-btn" href="#story">Discover our story <span>→</span></a></div><div class="hero-notes"><span><b>01</b> Rooted in Ayurveda</span><span><b>02</b> Clear ingredient journey</span><span><b>03</b> Digital verification</span></div></div><div class="hero-photo"><img src="assets/hero.webp" alt="trueNourisher Ayurvedic supplement bottle"><div class="photo-caption"><span>TRUE NOURISHER</span><b>NOURISH NATURALLY. LIVE TRULY.</b></div></div></section>
+<section class="signature"><div><span class="overline">THE TRUE NOURISHER PROMISE</span><h2>Wellness, without<br><em>the noise.</em></h2></div><p>From discovery to delivery, trueNourisher brings product, trust and digital guidance into one calm experience. Our concept is built around authentic formulations, transparent verification, personalization and a lasting wellness journey.</p></section>
+<section class="values"><div class="value"><span>01</span><h3>Purely considered</h3><p>Natural Ayurvedic concepts with a premium, ingredient-first presentation.</p></div><div class="value"><span>02</span><h3>Made transparent</h3><p>Batch-level QR verification designed to make every purchase more traceable.</p></div><div class="value"><span>03</span><h3>Made personal</h3><p>A digital assessment layer that helps customers discover a more relevant ritual.</p></div><div class="value"><span>04</span><h3>Made to continue</h3><p>Tracking, reordering and wellness touchpoints beyond the delivery box.</p></div></section>
+<section class="editorial" id="story"><div class="editorial-image"><img src="assets/hero.webp" alt="trueNourisher Ayurvedic product showcase"></div><div class="editorial-copy"><p class="overline">02 / OUR COLLECTION</p><h2>Nature's goodness,<br><em>on your shelf.</em></h2><p>Designed to feel more like a considered ritual than a generic supplement aisle. The visual language is warm wood, soft neutrals, amber glass, botanical greens and generous space.</p><div class="mini-list"><span><b>01</b> Ayurvedic supplements</span><span><b>02</b> Superfood nourishment</span><span><b>03</b> Curated wellness combos</span></div><a class="btn outline" href="#shop">Explore products <span>→</span></a></div></section>
+<section class="shop" id="shop"><div class="section-heading"><div><p class="overline">03 / SHOP</p><h2>The everyday<br><em>rituals.</em></h2></div><div><p>Concept catalogue with product pricing, cart and checkout interactions. Connect the real inventory and payment backend when ready.</p><select id="sortProducts"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select></div></div><div class="category-row"><button class="active" data-filter="all">All</button><button data-filter="Herbal">Herbal</button><button data-filter="Superfood">Superfood</button><button data-filter="Combo">Combos</button></div>
+<div class="products" id="productGrid">
+<article class="product" data-product="Ayurvedic Supplement" data-price="699" data-category="Herbal"><div class="product-image real-image"><img src="assets/hero.webp" alt="Ayurvedic supplement"><span>NEW</span><button class="quick" data-add="Ayurvedic Supplement" data-price="699">+ Add</button></div><div class="product-info"><small>TRUE NOURISHER / SIGNATURE</small><h3>Ayurvedic Supplement</h3><p>Premium daily wellness formulation.</p><div><strong>₹699</strong><del>₹799</del><em>20 servings</em></div></div></article>
+<article class="product" data-product="Ashwagandha" data-price="499" data-category="Herbal"><div class="product-image bottle-art amber"><span>BESTSELLER</span><div class="mock-bottle"><i>tn</i><b>ASHWAGANDHA</b><small>Stress Support</small></div><button class="quick" data-add="Ashwagandha" data-price="499">+ Add</button></div><div class="product-info"><small>HERBAL COLLECTION</small><h3>Ashwagandha</h3><p>A classic Ayurvedic ritual for everyday balance.</p><div><strong>₹499</strong><del>₹599</del><em>60 capsules</em></div></div></article>
+<article class="product" data-product="Turmeric Curcumin" data-price="549" data-category="Herbal"><div class="product-image bottle-art turmeric"><span>POPULAR</span><div class="mock-bottle"><i>tn</i><b>TURMERIC<br>CURCUMIN</b><small>Herbal Supplement</small></div><button class="quick" data-add="Turmeric Curcumin" data-price="549">+ Add</button></div><div class="product-info"><small>HERBAL COLLECTION</small><h3>Turmeric Curcumin</h3><p>A warm, familiar botanical ritual for the everyday shelf.</p><div><strong>₹549</strong><del>₹649</del><em>60 capsules</em></div></div></article>
+<article class="product" data-product="Triphala" data-price="449" data-category="Herbal"><div class="product-image bottle-art sage"><span>DAILY RITUAL</span><div class="mock-bottle"><i>tn</i><b>TRIPHALA</b><small>Digestive Wellness</small></div><button class="quick" data-add="Triphala" data-price="449">+ Add</button></div><div class="product-info"><small>HERBAL COLLECTION</small><h3>Triphala</h3><p>A traditional botanical blend for a mindful routine.</p><div><strong>₹449</strong><del>₹549</del><em>60 capsules</em></div></div></article>
+<article class="product" data-product="Brahmi" data-price="529" data-category="Herbal"><div class="product-image bottle-art plum"><span>FOCUS</span><div class="mock-bottle"><i>tn</i><b>BRAHMI</b><small>Focus & Clarity</small></div><button class="quick" data-add="Brahmi" data-price="529">+ Add</button></div><div class="product-info"><small>HERBAL COLLECTION</small><h3>Brahmi</h3><p>A refined addition to a focused wellness ritual.</p><div><strong>₹529</strong><del>₹629</del><em>60 capsules</em></div></div></article>
+<article class="product" data-product="Moringa Superfood" data-price="399" data-category="Superfood"><div class="product-image pouch-art"><span>SUPERFOOD</span><div class="mock-pouch"><i>tn</i><b>MORINGA</b><small>SUPERFOOD POWDER</small></div><button class="quick" data-add="Moringa Superfood" data-price="399">+ Add</button></div><div class="product-info"><small>SUPERFOOD COLLECTION</small><h3>Moringa Superfood</h3><p>Pure green nourishment for a simple daily ritual.</p><div><strong>₹399</strong><del>₹449</del><em>100 g</em></div></div></article></div><p class="prototype">Prototype catalogue — product prices, stock, payment and health claims are placeholders until connected to the real store backend.</p></section>
+<section class="ritual" id="ritual"><div class="ritual-copy"><p class="overline">04 / PERSONAL WELLNESS</p><h2>Your ritual,<br><em>your way.</em></h2><p>Take a short demo assessment to explore how trueNourisher can turn goals and preferences into a more relevant product journey.</p><button class="btn light" id="openQuiz">Start the assessment <span>→</span></button></div><div class="ritual-card"><small>YOUR WELLNESS PROFILE</small><div class="bar"><i></i></div><h3>What matters most right now?</h3><div>Everyday balance <b>✓</b></div><div>Build a better routine <b>›</b></div><div>Learn about Ayurveda <b>›</b></div></div></section>
+<section class="verify" id="verify"><div><p class="overline">05 / VERIFY</p><h2>Know your<br><em>product.</em></h2><p>Scan the QR on a future pack or enter a demo batch ID to see how product authentication can sit inside the shopping experience.</p><label>Batch ID</label><div class="verify-row"><input id="batch" placeholder="TN-2026-001"><button id="verifyBtn">Verify</button></div><small>Demo only — not connected to a live product database.</small><div id="verifyResult"></div></div><div class="qr-card"><div class="fake-qr"></div><strong>SCAN • VERIFY • KNOW</strong></div></section>
+<section class="closing"><p class="overline">TRUE NOURISHER</p><h2>Nourish naturally.<br><em>Live truly.</em></h2><a class="btn light" href="#shop">Shop the collection <span>↗</span></a></section></main>
+<footer><div class="footer-brand"><a class="logo" href="#home"><span class="logo-mark">tn</span><span>true<span>Nourisher</span></span></a><p>Authentic Ayurveda, thoughtfully brought into a modern digital wellness journey.</p></div><div class="footer-links"><a href="#shop">Shop</a><a href="#story">Our story</a><a href="#ritual">Wellness</a><a href="#verify">Verify</a></div><div class="footer-bottom">© <span id="year"></span> trueNourisher <span>Wellness information is educational and not medical advice.</span></div></footer>
+<div class="cart-drawer" id="cartDrawer" aria-hidden="true"><div class="drawer-backdrop" id="cartBackdrop"></div><aside class="drawer"><div class="drawer-head"><div><small>YOUR BAG</small><h3>Wellness cart</h3></div><button id="closeCart">×</button></div><div class="cart-items" id="cartItems"></div><div class="cart-total"><div><span>Subtotal</span><strong id="cartSubtotal">₹0</strong></div><small>Free shipping above ₹999</small><button id="checkoutBtn">Proceed to checkout <span>→</span></button></div></aside></div>
+<div class="checkout-modal" id="checkoutModal" aria-hidden="true"><div class="drawer-backdrop" id="checkoutBackdrop"></div><div class="checkout"><button id="closeCheckout">×</button><small>SECURE CHECKOUT / DEMO</small><h2>Complete your <em>order.</em></h2><div class="fields"><label>Name<input id="checkoutName" placeholder="Your name"></label><label>Phone<input placeholder="+91"></label><label class="wide">Delivery address<textarea placeholder="House / street / city / PIN"></textarea></label></div><div class="checkout-total"><span>Order total</span><strong id="checkoutTotal">₹0</strong></div><button class="btn dark" id="placeOrder">Place demo order <span>→</span></button><p>Demo only. No payment is processed.</p></div></div>
+<div class="quiz-modal" id="quizModal" aria-hidden="true"><div class="drawer-backdrop"></div><div class="quiz"><button id="closeQuiz">×</button><small>DEMO ASSESSMENT</small><h2>Find your <em>starting point.</em></h2><div class="quiz-step" data-step="1"><h3>What matters most right now?</h3><button data-choice="Balance">Everyday balance</button><button data-choice="Routine">A better routine</button><button data-choice="Learning">Learn about Ayurveda</button></div><div class="quiz-step hidden" data-step="2"><h3>How do you like to begin?</h3><button data-choice="Simple">Keep it simple</button><button data-choice="Explore">I like to explore</button><button data-choice="Guided">I prefer guidance</button></div><div class="quiz-step hidden" data-step="3"><div class="result"><b id="profileTitle">Your wellness starting point</b><p id="profileText">Explore the collection and shape a simple ritual.</p></div><button class="btn dark" id="finishQuiz">Explore products <span>→</span></button></div></div></div>
+<div class="toast" id="toast"></div><script src="script.js"></script></body></html>
