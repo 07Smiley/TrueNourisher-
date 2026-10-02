@@ -43,3 +43,80 @@
 /* Premium botanical catalogue */
 .catalog-intro{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:13px 0;margin-bottom:38px;color:#707870;font-size:8px;letter-spacing:1.8px}.catalog-intro span{color:var(--gold);font-weight:700}.catalog-intro b{font-size:8px;font-weight:600}.premium-catalog{gap:22px}.premium-product{border:1px solid #ddd8cc;background:#fff;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}.premium-product:hover{transform:translateY(-5px);box-shadow:0 20px 45px rgba(35,67,44,.10);border-color:#c9c3b5}.premium-product .product-image{height:390px}.premium-product .product-image>span{background:#f7f3ea;color:var(--deep);border:1px solid rgba(39,49,39,.08)}.premium-info{padding:24px 24px 26px}.premium-info>small{display:block;min-height:16px;letter-spacing:1.7px;color:#8b928a}.premium-info h3{font-size:27px;margin:8px 0 7px}.premium-info>p{min-height:54px;font-size:11px;line-height:1.75;margin-bottom:17px}.effect-row{display:flex;gap:6px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:14px;margin-bottom:17px}.effect-row span{border:1px solid #ddd8cc;border-radius:999px;padding:5px 8px;font-size:7px;text-transform:uppercase;letter-spacing:.7px;color:#657064;background:#faf9f5}.effect-row span:last-child{background:#edf2e9;color:var(--deep);border-color:#d8e0d1}.product-meta{display:flex;align-items:baseline;gap:8px}.product-meta strong{font-size:22px}.product-meta em{font-style:normal;margin-left:auto;font-size:8px;color:#858c84}.catalog-link{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);margin-top:17px;padding-top:14px;font-size:9px;font-weight:700;color:var(--deep)}.catalog-link span{font-size:13px}.premium-product .quick{opacity:0}.premium-product:hover .quick{opacity:1;transform:none}.premium-product .mock-bottle{box-shadow:18px 28px 38px rgba(32,44,32,.24)}
 @media(max-width:680px){.catalog-intro{display:block;line-height:1.8}.catalog-intro b{display:block;margin-top:4px}.premium-product .product-image{height:360px}.premium-info>p{min-height:0}.premium-product .quick{opacity:1;transform:none}}
+
+
+/* Zoetto-inspired editorial motion system — trueNourisher */
+:root{--tn-espresso:#35271e;--tn-olive:#66775a;--tn-sand:#eee6d7;--tn-cream:#f7f2e9}
+body{background:var(--tn-cream);overflow-x:hidden}
+.header{background:rgba(247,242,233,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transition:background .35s,box-shadow .35s}
+.header.scrolled{background:rgba(247,242,233,.97);box-shadow:0 12px 35px rgba(39,49,39,.08)}
+.topbar{letter-spacing:2.5px}
+.hero{position:relative;overflow:hidden;background:var(--tn-sand)}
+.hero-copy{position:relative;z-index:2}
+.hero h1{animation:tnReveal .9s cubic-bezier(.16,1,.3,1) both}
+.hero-text{animation:tnReveal .9s .12s cubic-bezier(.16,1,.3,1) both}
+.hero-buttons{animation:tnReveal .9s .22s cubic-bezier(.16,1,.3,1) both}
+.hero-notes{animation:tnReveal .9s .32s cubic-bezier(.16,1,.3,1) both}
+.hero-photo{transform:scale(1.015);animation:tnImageIn 1.2s cubic-bezier(.16,1,.3,1) both}
+.hero-photo .hero-image{transition:transform 1.2s cubic-bezier(.16,1,.3,1)}
+.hero-photo:hover .hero-image{transform:scale(1.055)}
+.photo-caption{transform:translateY(0);transition:transform .45s cubic-bezier(.16,1,.3,1),background .35s}
+.hero-photo:hover .photo-caption{transform:translateY(-7px);background:rgba(250,248,241,.94)}
+.btn{position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.btn:before{content:"";position:absolute;inset:0;background:rgba(255,255,255,.14);transform:translateX(-110%) skewX(-18deg);transition:transform .55s}
+.btn:hover:before{transform:translateX(110%) skewX(-18deg)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(35,67,44,.16)}
+.signature,.values,.editorial,.shop,.ritual,.verify,.closing{position:relative}
+.value{transition:background .35s,transform .35s}
+.value:hover{background:#f0eadf;transform:translateY(-4px)}
+.editorial-image{overflow:hidden}
+.editorial-image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 55%,rgba(24,42,27,.12));pointer-events:none}
+.editorial-image{position:relative}
+.editorial-image>a{position:relative;z-index:2}
+.editorial-image:before{content:"";position:absolute;inset:-8%;background:inherit;transform:scale(1.08);transition:transform 1s cubic-bezier(.16,1,.3,1)}
+.editorial:hover .editorial-image:before{transform:scale(1)}
+.mini-list span{transition:padding-left .35s,background .35s}
+.mini-list span:hover{padding-left:10px;background:rgba(255,255,255,.28)}
+.catalog-intro{position:relative;overflow:hidden}
+.catalog-intro:after{content:"";position:absolute;left:-30%;bottom:-1px;width:30%;height:1px;background:var(--gold);animation:tnLine 5s linear infinite}
+.premium-product{position:relative;overflow:hidden;transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s,border-color .35s}
+.premium-product:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 35%,rgba(255,255,255,.42) 50%,transparent 65%);transform:translateX(-120%);pointer-events:none}
+.premium-product:hover:after{animation:tnSheen .9s ease}
+.premium-product .product-image{overflow:hidden}
+.premium-product .product-image:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 55%,rgba(255,255,255,.35),transparent 42%);opacity:.65;pointer-events:none;z-index:1}
+.premium-product .mock-bottle,.premium-product .mock-pouch{transition:transform .65s cubic-bezier(.16,1,.3,1),filter .5s}
+.premium-product:hover .mock-bottle{transform:rotate(-1deg) translateY(-10px) scale(1.035)}
+.premium-product:hover .mock-pouch{transform:translateY(-10px) scale(1.035)}
+.premium-product:hover{transform:translateY(-10px);box-shadow:0 28px 65px rgba(35,67,44,.14)}
+.catalog-link{transition:letter-spacing .3s}
+.catalog-link:hover{letter-spacing:.25px}
+.effect-row span{transition:transform .25s,background .25s}
+.effect-row span:hover{transform:translateY(-2px);background:#eef2e8}
+.science .evidence-card{transition:transform .45s cubic-bezier(.16,1,.3,1),box-shadow .45s}
+.science .evidence-card:hover{transform:translateY(-7px);box-shadow:0 22px 55px rgba(35,67,44,.09)}
+.ritual-card{transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .6s}
+.ritual-card:hover{transform:rotate(0) translateY(-8px);box-shadow:25px 40px 80px rgba(0,0,0,.28)}
+.qr-card{overflow:hidden;position:relative}
+.qr-card:before{content:"";position:absolute;width:220px;height:220px;border:1px solid rgba(35,67,44,.16);border-radius:50%;animation:tnPulse 3.5s ease-in-out infinite}
+.fake-qr{transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.qr-card:hover .fake-qr{transform:scale(1.04) rotate(2deg)}
+.closing{overflow:hidden}
+.closing:before,.closing:after{content:"";position:absolute;border-radius:50%;filter:blur(1px);pointer-events:none}
+.closing:before{width:260px;height:260px;left:-110px;top:-100px;background:rgba(103,119,90,.12);animation:tnFloat 7s ease-in-out infinite}
+.closing:after{width:300px;height:300px;right:-130px;bottom:-150px;background:rgba(169,130,67,.10);animation:tnFloat 9s 1s ease-in-out infinite reverse}
+footer .footer-links a{transition:color .25s,transform .25s;display:inline-block}
+footer .footer-links a:hover{color:#fff;transform:translateY(-2px)}
+[data-reveal]{opacity:0;transform:translateY(34px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
+[data-reveal].is-visible{opacity:1;transform:none}
+[data-reveal="left"]{transform:translateX(-38px)}
+[data-reveal="right"]{transform:translateX(38px)}
+[data-reveal="scale"]{transform:scale(.94)}
+[data-reveal].is-visible{transform:none}
+@keyframes tnReveal{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes tnImageIn{from{opacity:0;transform:scale(1.08)}to{opacity:1;transform:scale(1.015)}}
+@keyframes tnSheen{to{transform:translateX(120%)}}
+@keyframes tnLine{0%{left:-30%}50%{left:100%}100%{left:100%}}
+@keyframes tnPulse{0%,100%{transform:scale(.82);opacity:.35}50%{transform:scale(1.12);opacity:.7}}
+@keyframes tnFloat{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(20px,-18px,0)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}[data-reveal]{opacity:1!important;transform:none!important}}
+@media(max-width:680px){.hero-photo:hover .hero-image{transform:none}.premium-product:hover{transform:translateY(-4px)}.editorial-image:before{display:none}.photo-caption{transform:none!important}.value:hover{transform:none}}
