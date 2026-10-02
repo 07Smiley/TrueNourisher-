@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   const revealTargets=document.querySelectorAll('.signature,.value,.editorial-copy,.shop .section-heading,.category-row,.premium-product,.science-head,.evidence-card,.classical-sources,.science-footer,.ritual-copy,.ritual-card,.verify>div,.closing h2');
   revealTargets.forEach((el,i)=>{el.dataset.reveal=i%4===1?'left':i%4===2?'scale':i%4===3?'right':'up'});
   const observer=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}});
+    entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible')}else{entry.target.classList.remove('is-visible')}});
   },{threshold:.12,rootMargin:'0px 0px -55px 0px'});
   revealTargets.forEach(el=>observer.observe(el));
 
