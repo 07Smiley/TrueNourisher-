@@ -10,3 +10,42 @@ $$('.category-row button').forEach(btn=>btn.onclick=()=>{$$('.category-row butto
 const checkout=$('#checkoutModal');$('#checkoutBtn').onclick=()=>{const total=Object.values(cart).reduce((s,x)=>s+x.price*x.qty,0);if(!total){showToast('Your bag is empty');return}$('#checkoutTotal').textContent=money(total);checkout.classList.add('open')};$('#closeCheckout').onclick=()=>checkout.classList.remove('open');$('#checkoutBackdrop').onclick=()=>checkout.classList.remove('open');$('#placeOrder').onclick=()=>{const n=$('#checkoutName').value.trim();if(!n){showToast('Please enter your name');return}checkout.classList.remove('open');closeCart();Object.keys(cart).forEach(k=>delete cart[k]);renderCart();showToast('Demo order placed — thank you, '+n+' ✦')};
 const batch=$('#batch'),vr=$('#verifyResult');$('#verifyBtn').onclick=verify;batch.onkeydown=e=>{if(e.key==='Enter')verify()};function verify(){const v=batch.value.trim().toUpperCase();if(v==='TN-2026-001'){vr.innerHTML='✓ <b>Demo batch verified.</b> Authenticity record found.';vr.style.color='#3f603c'}else{vr.innerHTML=v?'○ <b>No demo record found.</b> Try TN-2026-001.':'Enter a batch ID to verify.';vr.style.color='#8a6e36'}}
 const quiz=$('#quizModal'),steps=$$('.quiz-step'),answers=[];$('#openQuiz').onclick=()=>quiz.classList.add('open');$('#closeQuiz').onclick=()=>quiz.classList.remove('open');quiz.querySelector('.drawer-backdrop').onclick=()=>quiz.classList.remove('open');$$('.quiz-step button[data-choice]').forEach(b=>b.onclick=()=>{const i=steps.findIndex(s=>!s.classList.contains('hidden'));answers.push(b.dataset.choice);steps[i].classList.add('hidden');steps[i+1].classList.remove('hidden');if(i===1)$('#profileTitle').textContent=answers[0]+' • '+answers[1]});$('#finishQuiz').onclick=()=>{quiz.classList.remove('open');answers.length=0;steps.forEach((s,i)=>s.classList.toggle('hidden',i!==0));$('#shop').scrollIntoView({behavior:'smooth'});showToast('Your demo ritual is ready ✦')};
+
+/* Premium editorial motion */
+document.addEventListener('DOMContentLoaded',()=>{
+  const header=document.querySelector('.header');
+  const revealTargets=document.querySelectorAll('.signature,.value,.editorial-copy,.shop .section-heading,.category-row,.premium-product,.science-head,.evidence-card,.classical-sources,.science-footer,.ritual-copy,.ritual-card,.verify>div,.closing h2');
+  revealTargets.forEach((el,i)=>{el.dataset.reveal=i%4===1?'left':i%4===2?'scale':i%4===3?'right':'up'});
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}});
+  },{threshold:.12,rootMargin:'0px 0px -55px 0px'});
+  revealTargets.forEach(el=>observer.observe(el));
+
+  const onScroll=()=>{
+    header?.classList.toggle('scrolled',window.scrollY>24);
+    const photo=document.querySelector('.hero-photo .hero-image');
+    if(photo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      const y=Math.min(window.scrollY*.08,32);
+      photo.style.transform='scale(1.015) translate3d(0,'+y+'px,0)';
+    }
+  };
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  document.querySelectorAll('.btn,.link-btn,.catalog-link,.bag').forEach(el=>{
+    el.addEventListener('pointermove',e=>{
+      if(window.matchMedia('(pointer:coarse)').matches)return;
+      const r=el.getBoundingClientRect(),x=(e.clientX-r.left-r.width/2)*.06,y=(e.clientY-r.top-r.height/2)*.06;
+      el.style.transform='translate3d('+x+'px,'+y+'px,0)';
+    });
+    el.addEventListener('pointerleave',()=>el.style.transform='');
+  });
+
+  document.querySelectorAll('.premium-product').forEach(card=>{
+    card.addEventListener('pointermove',e=>{
+      if(window.matchMedia('(pointer:coarse)').matches)return;
+      const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform='translateY(-10px) perspective(900px) rotateX('+(-y*2.2)+'deg) rotateY('+(x*2.2)+'deg)';
+    });
+    card.addEventListener('pointerleave',()=>card.style.transform='');
+  });
+});
